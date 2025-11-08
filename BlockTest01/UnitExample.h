@@ -28,7 +28,8 @@ class ATL_NO_VTABLE CUnitExample :
 	public IDispatchImpl<IUnitExample, &IID_IUnitExample, &LIBID_BlockTest01Lib, /*wMajor =*/ 1, /*wMinor =*/ 0>,
 	public IDispatchImpl<ICapeUnit, &__uuidof(ICapeUnit), &LIBID_CAPEOPEN110, /* wMajor = */ 1, /* wMinor = */ 1>,
 	public IDispatchImpl<ICapeUtilities, &__uuidof(ICapeUtilities), &LIBID_CAPEOPEN110, /* wMajor = */ 1, /* wMinor = */ 1>,
-	public IDispatchImpl<ICapeIdentification, &__uuidof(ICapeIdentification), &LIBID_CAPEOPEN110, /* wMajor = */ 1, /* wMinor = */ 1>
+	public IDispatchImpl<ICapeIdentification, &__uuidof(ICapeIdentification), &LIBID_CAPEOPEN110, /* wMajor = */ 1, /* wMinor = */ 1>,
+	public IDispatchImpl<ICapeUnitReport, &__uuidof(ICapeUnitReport), &LIBID_CAPEOPEN110, /* wMajor = */ 1, /* wMinor = */ 0>
 {
 
 private:
@@ -60,6 +61,7 @@ public:
 		COM_INTERFACE_ENTRY(ICapeUnit)
 		COM_INTERFACE_ENTRY(ICapeUtilities)
 		COM_INTERFACE_ENTRY(ICapeIdentification)
+		COM_INTERFACE_ENTRY(ICapeUnitReport)
 	END_COM_MAP()
 
 
@@ -362,6 +364,29 @@ public:
 		// 不做实现，返回空结果
 
 		return S_OK;
+	}
+
+
+// ICapeUnitReport Methods
+public:
+	STDMETHOD(get_reports)(VARIANT *reports)
+	{
+		 return E_NOTIMPL;
+	}
+
+	STDMETHOD(get_selectedReport)(BSTR *selectedReport)
+	{
+		 return E_NOTIMPL;
+	}
+
+	STDMETHOD(put_selectedReport)(BSTR pszselectedReport)
+	{
+		 return E_NOTIMPL;
+	}
+
+	STDMETHOD(ProduceReport)(BSTR * message)
+	{
+		 return E_NOTIMPL;
 	}
 
 };
