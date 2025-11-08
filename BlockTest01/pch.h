@@ -9,6 +9,6 @@
 
 // 添加要在此处预编译的标头
 #include "framework.h"
-#import "C:\Program Files (x86)\Common Files\CAPE-OPEN\CAPE-OPENv1-1-0.tlb" raw_interfaces_only, raw_native_types, no_namespace, named_guids, auto_search
+#import "D:\Code\Cpp\CapeOpen-Cpp\BlockTest01\CAPE-OPENv1-1-0.tlb" raw_interfaces_only, raw_native_types, no_namespace, named_guids, auto_search
 
 #endif //PCH_H

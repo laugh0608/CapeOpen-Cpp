@@ -33,9 +33,9 @@ class ATL_NO_VTABLE CUnitExample :
 
 private:
 	// 创建端口数组
-	CComObject<CPortsArray> *pPortArray;
+	CComObject<CPortsArray>* pPortArray;
 	// 创建 Parameter 参数集数组
-	CComObject<CParameterArray> *pParameterArray;
+	CComObject<CParameterArray>* pParameterArray;
 
 public:
 	CUnitExample()
@@ -51,16 +51,16 @@ public:
 		pParameterArray->AddRef();
 	}
 
-DECLARE_REGISTRY_RESOURCEID(106)
+	DECLARE_REGISTRY_RESOURCEID(106)
 
 
-BEGIN_COM_MAP(CUnitExample)
-	COM_INTERFACE_ENTRY(IUnitExample)
-	COM_INTERFACE_ENTRY2(IDispatch, ICapeUnit)
-	COM_INTERFACE_ENTRY(ICapeUnit)
-	COM_INTERFACE_ENTRY(ICapeUtilities)
-	COM_INTERFACE_ENTRY(ICapeIdentification)
-END_COM_MAP()
+	BEGIN_COM_MAP(CUnitExample)
+		COM_INTERFACE_ENTRY(IUnitExample)
+		COM_INTERFACE_ENTRY2(IDispatch, ICapeUnit)
+		COM_INTERFACE_ENTRY(ICapeUnit)
+		COM_INTERFACE_ENTRY(ICapeUtilities)
+		COM_INTERFACE_ENTRY(ICapeIdentification)
+	END_COM_MAP()
 
 
 
@@ -80,9 +80,9 @@ public:
 
 
 
-// ICapeUnit Methods
+	// ICapeUnit Methods
 public:
-	STDMETHOD(get_ports)(LPDISPATCH *ports)
+	STDMETHOD(get_ports)(LPDISPATCH* ports)
 	{
 		// 获取端口为空时进行拦截
 		if (ports == NULL) return E_FAIL;
@@ -108,7 +108,7 @@ public:
 		return S_OK;
 	}
 
-	STDMETHOD(get_ValStatus)(CapeValidationStatus *pValStatus)
+	STDMETHOD(get_ValStatus)(CapeValidationStatus* pValStatus)
 	{
 		// 断点调试
 		//MessageBox(NULL, L"get val status", L" ", MB_OK);
@@ -258,7 +258,7 @@ public:
 		return S_OK;
 	}
 
-	STDMETHOD(Validate)(BSTR *message, VARIANT_BOOL *pValidateStatus)
+	STDMETHOD(Validate)(BSTR* message, VARIANT_BOOL* pValidateStatus)
 	{
 		// 断点调试
 		//MessageBox(NULL, L"validate", L" ", MB_OK);
@@ -273,9 +273,9 @@ public:
 	}
 
 
-// ICapeUtilities Methods
+	// ICapeUtilities Methods
 public:
-	STDMETHOD(get_parameters)(LPDISPATCH *parameters)
+	STDMETHOD(get_parameters)(LPDISPATCH* parameters)
 	{
 		// 断点调试
 		//MessageBox(NULL, L"get parameters", L" ", MB_OK);
@@ -331,9 +331,9 @@ public:
 	}
 
 
-// ICapeIdentification Methods
+	// ICapeIdentification Methods
 public:
-	STDMETHOD(get_ComponentName)(BSTR *pComponentName)
+	STDMETHOD(get_ComponentName)(BSTR* pComponentName)
 	{
 		// 获取单元模块名字
 		CBSTR n(SysAllocString(L"Unit Example Name"));	// string 转 const OLECHAR* 类型
@@ -349,7 +349,7 @@ public:
 		return S_OK;
 	}
 
-	STDMETHOD(get_ComponentDescription)(BSTR *pComponentDesc)
+	STDMETHOD(get_ComponentDescription)(BSTR* pComponentDesc)
 	{
 		// 获取单元模块描述
 		CBSTR d(SysAllocString(L"Unit Example Desc"));	// string 转 const OLECHAR* 类型
